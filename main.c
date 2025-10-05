@@ -4,10 +4,11 @@
  {
  char name[255];
  printf("Enter your first name: ");
- fgets(name, 255, stdin);
+ fgets(first, 255, stdin);
  first[strlen(name)-1] = '\0'; /* remove the newline at the end */
  printf("Now enter your last name: ");
- gets(last); /* buffer overflow? what's that? */
+ fgets(last, 255, stdin);
+ last[strlen(name)-1] = '\0'; /* remove the newline at the end */
  printf("Hello %s %s!\n", first, last);
  return 0;
  }
